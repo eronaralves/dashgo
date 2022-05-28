@@ -8,7 +8,7 @@ const Chart = dynamic(() => import('react-apexcharts'), {
   ssr: false
 })
 
-const options = {
+const option = {
   chart: {
     toolbar: {
       show: false
@@ -42,7 +42,7 @@ const options = {
       '2021-03-21T00:00:00.000Z',
       '2021-03-22T00:00:00.000Z',
       '2021-03-23T00:00:00.000Z',
-      '2021-03-24T00:00:00.000Z',
+      '2021-03-24T00:00:00.000Z'
     ]
   },
   fill: {
@@ -79,23 +79,24 @@ export default function Dashboard() {
 
         <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start">
           <Box
-            p="8"
+            p={["6","8"]}
             bg="gray.800"
             borderRadius={8}
             pb="4"
           >
             <Text fontSize="lg" mb="4">Inscritos da semana</Text>
-            <Chart options={options} series={series} type="area" height={190} />
+            <Chart options={option} series={series} type="area" height={160}/>
           </Box>
 
           <Box
-            p="8"
+            flex="1"
+            p={["6","8"]}
             bg="gray.800"
             borderRadius={8}
             pb="4"
           >
             <Text fontSize="lg" mb="4">Taxa de Abertura</Text>
-            <Chart options={options} series={series} type="area" height={190} />
+            <Chart options={option} series={series} type="area" height={160}/>
           </Box>
         </SimpleGrid>
       </Flex>
