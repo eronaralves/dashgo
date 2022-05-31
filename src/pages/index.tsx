@@ -5,6 +5,7 @@ import { SubmitHandler, useForm }from"react-hook-form"
 import * as yup from 'yup'
 import { yupResolver } from "@hookform/resolvers/yup"
 import { Flex, Button, Stack } from "@chakra-ui/react"
+import Link from "next/link"
 
 type SignInFormData = {
   email: string
@@ -25,6 +26,7 @@ export default function Home() {
   const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
     await new Promise(resolve => setTimeout(resolve, 2000))
     console.log(values)
+
   }
 
 
@@ -53,11 +55,12 @@ export default function Home() {
 
         </Stack>
 
-        <Button type="submit" mt="6" colorScheme="pink" size="lg"
-        isLoading={formState.isSubmitting}>
-          Entrar
-        </Button>
-        
+        <Link href="/dashboard">
+          <Button type="submit" mt="6" colorScheme="purple" size="lg"
+            isLoading={formState.isSubmitting} disabled={errors.email || errors.password}>
+            Entrar
+          </Button>
+        </Link>
       </Flex>
     </Flex>
   ) 

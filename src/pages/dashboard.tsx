@@ -1,4 +1,4 @@
-import { Box, Flex, SimpleGrid, Text, theme } from "@chakra-ui/react";
+import { Box, Button, Flex, SimpleGrid, Text, theme } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { Header } from "../components/Header";
 import {Sidebar} from "../components/SideBar"
@@ -61,6 +61,7 @@ const series = [
 ]
 
 export default function Dashboard() {
+
   return (
     <Flex
       direction="column"
